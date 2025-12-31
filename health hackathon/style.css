@@ -1,0 +1,258 @@
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+}
+
+
+.login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+
+  z-index: 1000;
+}
+
+.app-name {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  margin-bottom: 24px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.login-box {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  width: 320px;
+}
+
+.login-box input,
+.login-box select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #162e6e;
+}
+
+
+#mainApp {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+  width: 220px;
+  background-color: #0f172a;
+  color: white;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.sidebar button {
+  background: none;
+  color: white;
+  border: none;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.sidebar button:hover {
+  background-color: #1e293b;
+}
+
+.logout-side {
+  margin-top: auto;
+  background-color: #ef4444 !important;
+}
+
+.logout-side:hover {
+  background-color: #dc2626 !important;
+}
+
+
+.main-content {
+  flex: 1;
+  background-color: #f4f6f8;
+}
+
+
+header {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 16px;
+}
+
+
+.container {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 12px 0;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1e3a8a;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #162e6e;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f1f5f9;
+}
+
+
+.risk-low {
+  color: green;
+  font-weight: bold;
+}
+
+.risk-moderate {
+  color: orange;
+  font-weight: bold;
+}
+
+.risk-high {
+  color: red;
+  font-weight: bold;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+/* Top bar */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.menu-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+.sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+
+.main-content {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+
+#mainApp.sidebar-open .sidebar {
+  width: 220px;
+  padding: 20px;
+}
+
+#mainApp.sidebar-open .main-content {
+  margin-left: 220px;
+}
+

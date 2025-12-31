@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarePulse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-container">
+  <h1 class="app-name">CarePulse</h1>
+  <p class="tagline">AI-Based Chronic Disease Monitoring</p>
+
+  <div class="login-box">
+    <select id="role">
+      <option value="">Select Role</option>
+      <option value="patient">Patient</option>
+      <option value="doctor">Doctor</option>
+    </select>
+
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- MAIN APP (Hidden initially) -->
+<div id="mainApp" class="hidden">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar collapsed" id="sidebar">
+    <h2 class="sidebar-title">CarePulse</h2>
+
+    <button onclick="showSection('patient')">Patient Dashboard</button>
+    <button onclick="showSection('doctor')">Doctor Dashboard</button>
+
+    <button class="logout-side" onclick="logout()">Logout</button>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+   <header class="topbar">
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+  <h1>Dashboard</h1>
+</header>
+
+    <div class="container">
+
+    <!-- Patient Dashboard -->
+    <section id="patientDashboard">
+      <h2>Patient Dashboard</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Glucose Level</h3>
+          <p id="glucoseValue">-- mg/dL</p>
+        </div>
+
+        <div class="card">
+          <h3>Blood Pressure</h3>
+          <p id="bpValue">-- / -- mmHg</p>
+        </div>
+
+        <div class="card">
+          <h3>AI Risk Status</h3>
+          <p id="riskStatus">Not calculated</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Entry -->
+    <section>
+      <h2>Enter Health Data</h2>
+      <div class="card">
+        <label>Glucose (mg/dL)</label>
+        <input type="number" id="glucoseInput" />
+
+        <label>BP Systolic</label>
+        <input type="number" id="sysInput" />
+
+        <label>BP Diastolic</label>
+        <input type="number" id="diaInput" />
+
+        <button onclick="analyzeRisk()">Analyze Risk</button>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section id="recommendationSection" class="hidden">
+      <h2>Personalized Recommendations</h2>
+      <div class="card">
+        <ul id="recommendations"></ul>
+      </div>
+    </section>
+
+    <!-- Doctor Dashboard -->
+    <section id="doctorDashboard">
+      <h2>Doctor / Hospital Dashboard</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Total Patients</h3>
+          <p>3</p>
+        </div>
+
+        <div class="card">
+          <h3>High Risk Alerts</h3>
+          <p class="risk-high">1 Patient</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Patient List</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Condition</th>
+              <th>Risk</th>
+            </tr>
+          </thead>
+          <tbody id="patientTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
